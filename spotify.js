@@ -1,13 +1,11 @@
 require('dotenv').config();
 require("fs")
-const userQuery = process.argv[3];
+let userQuery = process.argv[3];
 
-
-
-const keys = require("./keys.js");
-const Spotify = require('node-spotify-api');
-const spotify = new Spotify(keys.spotify);
-const doWhatItSays = require("./says.js")
+let keys = require("./keys.js");
+let Spotify = require('node-spotify-api');
+let spotify = new Spotify(keys.spotify);
+let doWhatItSays = require("./says.js")
 
 module.exports = function spotifyThisSong() {
 
