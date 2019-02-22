@@ -11,7 +11,6 @@ How to:
 3. Go to your terminal and enter that directory. You are now ready to use Liri!
 
 Following commands 
-
 node liri.js concert-this "enter a band"
 node liri.js spotify-this-song "enter a song"
 node liri.js movie-this "enter a movie"
