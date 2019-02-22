@@ -1,12 +1,13 @@
 require('dotenv').config();
 
+require('moment');
 const fs = require("fs");
-// const request = require("request");
+const request = require("request");
 const liriReturn = process.argv[2];
 const spotifyThisSong = require("./spotify.js");
 const bandsInTown = require("./bands.js");
 const movieThis = require("./movie.js");
-const doWhatItSays = require("./says.js")
+// const doWhatItSays = require("./says.js")
 
 switch (liriReturn) {
     case "concert-this":
@@ -30,6 +31,23 @@ switch (liriReturn) {
         + "movie-this 'anymovie title'" + "\n"
         + "do-what-it-says" + "\n");
 };
+
+
+function doWhatItSays( action, argument) {
+
+	fs.readFile("random.txt", "utf8", function(err, data) {
+		if (err) {
+			logOutput.error(err);
+		} else {
+			var randomArray = data.split(",");
+			action = randomArray[0];
+            argument = randomArray[1];
+            
+        console.log(action + " " + argument)
+		}
+	});
+}
+
 
 
 

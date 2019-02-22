@@ -4,6 +4,7 @@
 let artist = process.argv[3];
 
 const request = require("request");
+require('moment');
 
 module.exports = function bandsInTown() {
 
